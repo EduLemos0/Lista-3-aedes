@@ -20,12 +20,12 @@ void triangle(int x,int y,int z){
 
 
   if((z+y > x) && (x+z > y) && (x+y > z)){
-     if((x == y) || (x == z) || (y == z)){
-      printf("Triângulo Isósceles.\n\n");
+     if((x == y) && (y == z)){
+      printf("Triângulo Equilátero.\n\n");
     }else if((x!= y) && (x != z) && (y!=z)){
       printf("Triângulo Escaleno.\n\n");
     }else{
-       printf("Triângulo Equilátero.\n\n");
+       printf("Triângulo Isósceles.\n\n");
     }
   }else{
     printf("Não é triângulo.\n\n");
