@@ -2,15 +2,16 @@
 
 
 //Declarar abaixo as variáveis globais(sum).
-float sum=0;
+
 
 //declarar função que faz a operacao.
 void result(int N){
+  float sum=0,result=0;
   for(float x = 1; x <= N; x++){
-    sum +=sum;
     sum = (((x*x)+1) / ((x + 3))); 
+    result +=sum;
   }
-  printf("Resultado é: %0.2f",sum);
+  printf("Resultado é: %0.2f",result);
 }
 
 
@@ -22,5 +23,4 @@ int main(void) {
   scanf("%d",&n);
 
   result(n);
-  return 0;
 }
