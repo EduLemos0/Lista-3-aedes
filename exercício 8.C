@@ -5,22 +5,29 @@
 
 
 //declarar função que faz a operacao.
-void result(int N){
-  float sum=0,result=0;
-  for(float x = 1; x <= N; x++){
-    sum = (((x*x)+1) / ((x + 3))); 
-    result +=sum;
+float func1(int N){
+  float soma=0,resultado=0;
+  
+  for(int j = 1; j <= N; j++){
+    
+    soma = ((j*j)+1) / ((j + 3)); 
+    
+    resultado +=soma;
   }
-  printf("Resultado é: %0.2f",result);
+  
+  return(resultado);
 }
+
 
 
 
 //funcao que lê o número de repeticoes e encaminha para sum();
 int main(void) {
-  int n;
-  printf("Digite um número\n");
-  scanf("%d",&n);
+  int input;
+  printf("\n Digite o numero: ");
+  scanf("%d",&input);
 
-  result(n);
+  printf("%f", func1(input));
+
+  return 0;
 }
