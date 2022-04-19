@@ -1,23 +1,23 @@
 #include <stdio.h>
 
 //função que analisa a categoria do nadador
-void category(int N){
+char category(int N){
   int age;
   printf("digite a idade do nadador:\n");
   scanf("%d",&age);
 
   if((age >= 5) && (age <=7)){
-    printf("categoria F.\n\n");
+    return('F');
   }else if((age > 7) && (age <= 10)){
-    printf("categoria E.\n\n");
+    return('E');
   }else if((age > 10) && (age <=13)){
-    printf("categoria D.\n\n");
+    return('D');
   }else if((age > 13) && (age <= 15)){
-    printf("categoria C.\n\n");
+    return('C');
   }else if((age > 15) && (age <= 17)){
-    printf("categoria B.\n\n");
+    return('B');
   }else if (age >= 18){
-    printf("categoria A.\n\n");
+    return('A');
   }
 }
 
@@ -30,6 +30,6 @@ int main(void) {
 
   for(int i = 1; i <= n;i++){
     printf("calculando a categoria do nadador n°%d\n",i);
-    category(n);
+    printf("Categoria %c", category(n));
   }
 }
