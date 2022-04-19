@@ -1,37 +1,40 @@
 #include <stdio.h>
-//declarar variavel global soma.
-float sum = 0;
 
 //verifica se determinado aluno passou ou não.
-void filter(int *i){
-float score;
-  printf("Digite a nota do aluno:\n");
-  scanf("%f",&score);
-
-  if (score >= 6){
-    printf("aluno aprovado.\n");
-  }else{
-    printf("aluno reprovado.\n");
-  } 
-  sum += score;
+int score(float grade){
+  if(grade >= 6){
+    return 1;
+  } else {
+    return 0;
+  }
 }
 
 //função que calcula a média das notas.
-float average(int *i){
-  float avg = 0,num = *i;
+float average(int alunos, float nota){
+  float avg = nota/alunos;
 
-  avg = sum / num;
-  return avg;
+  return media;
+  
 }
 
 
 int main(void) {
-  int students;
-  printf("digite o número de alunos desejados:\n");
-  scanf("%d",&students);
-  for(int i = 1; i <= students;i++){
-  printf("\ncalculando a nota do aluno %d...\n",i);
-  filter(&i);
-  printf("A média entre os %d alunos é de %0.1f\n\n",i,average(&i));
- }
+  float input = 1;
+  int total = 0;
+  int totalNotas =0;
+  while(input > 0){
+    printf("\n Digite a nota do aluno \n(-1 para sair): ");
+    scanf("%f",&input);
+    if(input >0){
+      if(score(input) == 1){
+        total ++;
+        totalNotas += input;
+      }
+    }
+    
+  }
+
+  printf("Media dos alunos aprovados: %.2f", average(total, totalNotas));
+  
+  return 0;
 }
